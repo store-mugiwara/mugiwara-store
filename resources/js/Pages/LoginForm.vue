@@ -64,7 +64,11 @@ export default {
     },
     methods: {
         handleSubmit(){
-            this.$inertia.post(route('admin.login'), this.form);
+            this.$inertia.post(route('admin.login'), this.form, {
+                headers: {
+                    'X-Requested-With': 'ajax'
+                }
+            });
         }
     },
 }
