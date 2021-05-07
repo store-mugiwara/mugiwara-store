@@ -18,7 +18,7 @@ class AdminController extends Controller
         $images = Image::all();
 
         for ($i = 0; $i < count($images); $i++) {
-           $images[$i]->path =  env('APP_URL') . 'storage/' . $images[$i]->path;
+           $images[$i]->path =  env('APP_URL') . '/storage/' . $images[$i]->path;
         }
 
         return Inertia::render('Dashboard',[
@@ -35,6 +35,7 @@ class AdminController extends Controller
         $product->description = Request::input('description');
         $product->price = Request::input('price');
         $product->category_id = Request::input('category_id');
+        dd(Request::all());
         $product->save();
 
         for ($i=0; $i < count(Request::file('images')); $i++) {
