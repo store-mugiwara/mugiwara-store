@@ -1,5 +1,11 @@
 module.exports = {
-  purge: ["/resources/views/**/*.blade.php", "/resources/js/**/*.vue"],
+  purge: {
+      content: ["/resources/views/**/*.blade.php", "/resources/js/**/*.vue"],
+
+      options: {
+          safelist: ['bg-gray-200']
+      }
+    },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
