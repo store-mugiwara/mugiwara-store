@@ -1,10 +1,6 @@
 module.exports = {
   purge: {
-      content: ["/resources/views/**/*.blade.php", "/resources/js/**/*.vue"],
-
-      options: {
-          safelist: ['bg-gray-200']
-      }
+      content: [],
     },
   darkMode: false, // or 'media' or 'class'
   theme: {
