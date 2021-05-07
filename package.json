@@ -16,7 +16,6 @@
         "laravel-mix": "^6.0.6",
         "laravel-mix-tailwind": "^0.1.2",
         "lodash": "^4.17.19",
-        "postcss": "^8.2.10",
         "vue-loader": "^16.1.0"
     },
     "dependencies": {
@@ -25,6 +24,7 @@
         "@inertiajs/inertia-vue3": "^0.3.12",
         "@inertiajs/progress": "^0.2.4",
         "tailwindcss": "^2.1.1",
+        "postcss": "^8.2.10",
         "vue": "^3.0.11",
         "vue-carousel": "^0.18.0",
         "vue-owl-carousel": "^2.0.3"
