@@ -7,7 +7,6 @@ use App\Models\Image;
 use App\Models\Product;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request;
-use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 
 class AdminController extends Controller
@@ -18,9 +17,7 @@ class AdminController extends Controller
         $categories = Category::orderBy('created_at', 'DESC')->get();
         $images = Image::all();
 
-
         for ($i = 0; $i < count($images); $i++) {
-            var_dump(Storage::url($images[$i]->path));
            $images[$i]->path =  env('APP_URL') . '/storage/public/' . $images[$i]->path;
         }
 
@@ -42,8 +39,8 @@ class AdminController extends Controller
         $product->save();
 
         for ($i=0; $i < count(Request::file('images')); $i++) {
-        //    $path =  Request::file('images')[$i]->store('products');
-            $path = Storage::disk('public')->put('products/', Request::file('images')[$i]);
+           $path =  Request::file('images')[$i]->store('products');
+
            Image::create([
                'path' => $path,
                'product_id' => $product->id
