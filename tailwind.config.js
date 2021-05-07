@@ -1,6 +1,6 @@
 module.exports = {
   purge: {
-      content: [],
+      content: ["/resources/views/**/*.blade.php", "/resources/js/**/*.vue"],
     },
   darkMode: false, // or 'media' or 'class'
   theme: {
