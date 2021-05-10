@@ -18,7 +18,7 @@ class AdminController extends Controller
         $images = Image::all();
 
         for ($i = 0; $i < count($images); $i++) {
-           $images[$i]->path =  env('APP_URL') . '/storage/public/' . $images[$i]->path;
+           $images[$i]->path =  env('APP_URL') . '/storage/' . $images[$i]->path;
         }
 
         return Inertia::render('Dashboard',[
